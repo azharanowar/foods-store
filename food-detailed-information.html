@@ -14,8 +14,31 @@
         <section class="my-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 my-2">
-                        <h2 class="text-center text-uppercase">Food Detailed Page</h2>
+                    <div class="col-md-10 mx-auto my-2">
+                        <h2 class="text-center text-uppercase mb-3">Food Detailed Page</h2>
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="" class="img-fluid rounded-start rounded-0" alt="" id="foodDetailedDisplayImg"/>
+                                </div>
+                                <div class="col-md-6 py-5 px-4">
+                                    <h3 id="foodDetailedDisplayName"></h3>
+                                    <p>Short Description: <span id="foodDetailedDisplayShortDescription"></span></p>
+                                    <p>Category: <span id="foodDetailedDisplayCategory"></span></p>
+                                    <p>Available Area: <span id="foodDetailedDisplayArea"></span></p>
+                                    <p>Ingredients: <span id="foodDetailedDisplayIngredients"></span></p>
+                                    <p>Tags: <span id="foodDetailedDisplayTags"></span></p>
+                                    <button type="button" class="btn btn-outline-secondary rounded-2 py-2" onclick="window.location.href='index.html'">Back To Home Page</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 mx-auto my-2">
+                        <h5>Description: </h5>
+                        <p id="foodDetailedDisplayDescription"></p>
+                        <iframe src="" class="mx-auto mb-5" width="80%" height="60%" id="foodDetailedDisplayYouTubeVideo"></iframe>
                     </div>
                 </div>
             </div>
