@@ -23,7 +23,7 @@ const displayFoods = data => {
                     <h5 class="fs-4 card-title">${mealName}</h5>
                     <p class="card-text">${mealShortDescription}</p>
                     <p class="text-muted"><span>Category: ${mealCategory}</span> | <span>Area: ${mealAvailableArea}</span></p>
-                    <button type="button" class="btn btn-success rounded-2 py-2 w-100" onclick="foodSinglePageInformation()">Learn More</button>
+                    <button type="button" class="btn btn-success rounded-2 py-2 w-100" onclick="displayFoodDetailedInformation()">Learn More</button>
                 </div>
             </div>`;
         
@@ -32,7 +32,17 @@ const displayFoods = data => {
     });
 }
 
-const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=`;
+document.getElementById("searchBtn").addEventListener('click', () => {
+    const searchKeyword = document.getElementById("searchInputField").value;
+    if(searchKeyword) {
+        document.getElementById("foodsCard").innerHTML = '';
+        const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchKeyword}`;
+        getFoodsByDynamicURL(url);
+        document.getElementById("searchInputField").value = '';
+    }
+});
+
+const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 getFoodsByDynamicURL(url);
 
 
