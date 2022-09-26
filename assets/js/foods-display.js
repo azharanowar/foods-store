@@ -1,9 +1,3 @@
-const getFoodsByDynamicURL = (url) => {
-    fetch(url)
-        .then(response => response.json())
-        .then(data => displayFoods(data))
-}
-
 const displayFoods = data => {
     const meals = data.meals;
     const foodsCards = document.getElementById("foodsCard");
@@ -23,7 +17,7 @@ const displayFoods = data => {
                     <h5 class="fs-4 card-title">${mealName}</h5>
                     <p class="card-text">${mealShortDescription}</p>
                     <p class="text-muted"><span>Category: ${mealCategory}</span> | <span>Area: ${mealAvailableArea}</span></p>
-                    <button type="button" class="btn btn-success rounded-2 py-2 w-100" onclick="displayFoodDetailedInformation()">Learn More</button>
+                    <button type="button" class="btn btn-success rounded-2 py-2 w-100" onclick="window.location.href='food-detailed-information.html?mealId=${mealId}'">Learn More</button>
                 </div>
             </div>`;
         
